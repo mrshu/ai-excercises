@@ -1,3 +1,4 @@
+from __future__ import print_function
 import random
 import time
 
@@ -54,7 +55,7 @@ class EightPuzzle:
         else:
             return False
 
-    def print(self, state=None):
+    def print_state(self, state=None):
         """Prints the given state as an eight puzzle board. If no state is
         given, the internal state is used"""
         state = self.state if state is None else state
@@ -74,7 +75,7 @@ class EightPuzzle:
         """Tries to solve the puzzle by executing moves until the goal state is
         reached."""
         moves = 0
-        self.print()
+        self.print_state()
         prev_state = self.state
 
         while not self.in_goal_state():
@@ -82,7 +83,7 @@ class EightPuzzle:
 
             moves += 1
             print("\nMove #{}:\n".format(moves))
-            self.print(new_state)
+            self.print_state(new_state)
 
             if not self.check_move(prev_state, new_state):
                 raise Exception("Invalid move executed.")
@@ -99,6 +100,8 @@ class EightPuzzle:
         """Transforms an index in the internal state into x,y coordinates."""
         return (index // 3, index % 3)
 
+    # End of template. Feel free to edit the code below.
+
     def get_successors(self, state):
         """Returns a list of valid successor states for a given state."""
         return []
@@ -110,7 +113,7 @@ class EightPuzzle:
     def move(self, state):
         """Generates next state from the current state by executing a valid
         move."""
-        return []
+        return [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 
 if __name__ == '__main__':
