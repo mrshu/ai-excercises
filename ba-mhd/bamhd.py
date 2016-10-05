@@ -1,3 +1,4 @@
+from __future__ import print_function
 import json
 from math import radians, cos, sin, asin, sqrt
 
@@ -45,6 +46,6 @@ def find_shortest_path(bamhd, stopA, stopB):
 
 if __name__ == "__main__":
     bamhd = BaMHD()
-    print 'Zoo' in bamhd.stops()
-    print bamhd.distance('Avion - IKEA', 'Cvernovka')
-    print find_shortest_path(bamhd, 'Zoo', 'Avion - IKEA')
+    print('Zoo' in bamhd.stops())
+    print(bamhd.distance('Avion - IKEA', 'Cvernovka'))
+    print(find_shortest_path(bamhd, 'Zoo', 'Avion - IKEA'))
